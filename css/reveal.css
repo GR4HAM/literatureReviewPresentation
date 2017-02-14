@@ -163,6 +163,15 @@ body {
   color: #1b91ff; }
 
 /*********************************************
+ * CUSTOM STYLES - GS 201702
+ *********************************************/
+
+.smallFont li{
+font-size:12px;
+}
+
+
+/*********************************************
  * DEFAULT ELEMENT STYLES
  *********************************************/
 /* Fixes issue in Chrome where italic fonts did not appear when printing to PDF */
