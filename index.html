@@ -46,12 +46,12 @@
 					<h4>Midyear presentation</h4> 
 					<p> Graham Spinks, February 2017</p>					
 				</section>
-				<section>
+				<section data-transition="slide" data-background="#d9a48c" data-background-transition="concave">
 					<h2>PART 1</h2>	
-					<h3>Existing approaches (literature review)</h3>								
+					<h3>Existing approaches</h3>								
 				</section>
 
-					<section>
+					<section >
 						<h2>Non-neural network</h2>
 							<ul>
 								<li><b>Machine learning</b>: 1. Deconstruction, 2. common signatures 3. compatibilty (recombination) <a href="#/reference-slide-1">[1]</a> </li>
@@ -77,17 +77,18 @@
 						<h2>RNN approaches</h2>
 						
 						<ul>
-							<li>Character based (abc notation) -> monophonic <a href="#/reference-slide-1">[3]</a> </li>
-							<li>Custom representation for blues LSTM - similar to midi representation -> polyphonic <a href="#/reference-slide-1">[4]</a> </li>
-							<li>Bi-axial RNN: connect over time and over notes <a href="#/reference-slide-1">[5]</a> </li>
-							<li>GRU's: Gated Recurrent Unit: similar to LSTM without separate memory cell <a href="#/reference-slide-1">[6]</a> </li>
+							<li>Character based (abc notation) -> monophonic <a href="#/reference-slide-1">[2]</a> </li>
+							<li>Custom representation for blues LSTM - similar to midi representation -> polyphonic <a href="#/reference-slide-1">[3]</a> </li>
+							<li>Bi-axial RNN: connect over time and over notes <a href="#/reference-slide-1">[4]</a> </li>
+							<li>GRU's: Gated Recurrent Unit: similar to LSTM without separate memory cell <a href="#/reference-slide-1">[5]</a> </li>
 						</ul>				
 					</section>
 
 					<section>
 						<h2>RNN-RBM</h2>
 						
-							<p>RNN-RBM: Restricted Boltzmann Machine to predict conditional distribution of next timestep given previous timesteps <a href="#/reference-slide-1">[7], [8]</a> </p>
+							<p>RNN-RBM: Restricted Boltzmann Machine: Stochastic approach rather than deterministic 
+							<p> Predict conditional distribution of next timestep given previous timesteps <a href="#/reference-slide-1">[6], [7]</a> </p>
 							<p>Polyphonic and nice sounding music but no sense of time and only plays a couple of chords</p>
 					
 					</section>
@@ -96,7 +97,7 @@
 					<section>
 						<h2>Reinforcement learning</h2>
 					
-						<p>RL tuner by Magenta: creates RL reward function that teaches the LTSM model to follow certain rules<a href="#/reference-slide-1">[9]</a> </p>
+						<p>RL tuner by Magenta: creates RL reward function that teaches the LTSM model to follow certain rules<a href="#/reference-slide-1">[8]</a> </p>
 						<p>Tries to solve problem of excessively repeated tokens. </p>
 						<blockquote>"Any beginning music student learns that groups of notes belong to keys, chords follow progressions, and songs have consistent structures made up of musical phrases."</blockquote>
 					</section>
@@ -108,13 +109,13 @@
 					<section>
 						<h2>DeepBach</h2>
 					
-						<p>Given a melody, create convincing harmonies, trained on bach chorales <a href="#/reference-slide-1">[10]</a> </p>
+						<p>Given a melody, create convincing harmonies, trained on bach chorales <a href="#/reference-slide-1">[9]</a> </p>
 						<p>Uses known information of past and future melody to create harmony for the current time step. </p>
 						<p>Good results but limited flexibility due to chosen data representation. </p>
 					</section>
 					<section>
 						<img src="pics/deepBach.png" />
-						<p>DeepBach <a href="#/reference-slide-1">[10]</a> </p>
+						<p>DeepBach <a href="#/reference-slide-1">[9]</a> </p>
 					</section>
 					<section>	
 						<iframe width="560" height="315" src="https://www.youtube.com/embed/QiBM7-5hA6o" frameborder="0" allowfullscreen></iframe>		  
@@ -122,17 +123,17 @@
 
 				</section>
 
-				<section>
+				<section data-transition="slide" data-background="#bdbbf7">
 					<section>
 						<h3>Other approaches: Non-symbolic audio</h3>
 
-						<p> VRNN: RNN combined with variational autoencoder <a href="#/reference-slide-1">[40]</a> </p>
+						<p> VRNN: Variational autoencoder at each timestep of RNN <a href="#/reference-slide-1">[10]</a> </p>
 						<img src="pics/VRNN.png" height="350" alt="hi" class="inline"/>
 					</section>
 
 					<section>
 						<h3>Other approaches: Non-symbolic audio</h3>						
-						<p> Wavenet: fully convolutional Neural Network <a href="#/reference-slide-1">[41]</a> </p>
+						<p> Wavenet: fully convolutional Neural Network <a href="#/reference-slide-1">[11]</a> </p>
 						<iframe width="450" height="300" src="https://storage.googleapis.com/deepmind-live-cms/documents/BlogPost-Fig2-Anim-160908-r01.gif" frameborder="0" allowfullscreen></iframe>	
 						<iframe width="450" height="300" src="https://storage.googleapis.com/deepmind-live-cms/documents/BlogPost-Fig1-Anim-160908-r01.gif" frameborder="0" allowfullscreen></iframe>	
 						
@@ -143,8 +144,8 @@
 						<p>Image generation: usually CNN</p>
 
 						<ul>
-							<li>Deep convolutional nets (eg Deep Dream <a href="#/reference-slide-1">[15]</a> ) </li>
-							<li> Style reconstruction by computing correlations in layers of CNN <a href="#/reference-slide-1">[20]</a>  </li>
+							<li>Deep convolutional nets (eg Deep Dream <a href="#/reference-slide-1">[12]</a> ) </li>
+							<li> Style reconstruction by computing correlations in layers of CNN <a href="#/reference-slide-1">[13]</a>  </li>
 						</ul>				
 					</section>
 
@@ -153,18 +154,18 @@
 						<h3>Other approaches: Images</h3>
 
 						<p> DRAW: Deep Recurrent Attentive Writer</p>
-						<p> LSTM sequentially draws an image with fully differentiable attention network <a href="#/reference-slide-1">[19]</a>, <a href="#/reference-slide-1">[21]</a>  </p>	<iframe width="560" height="315" src="http://karpathy.github.io/assets/rnn/house_generate.gif" frameborder="0" allowfullscreen></iframe>	
+						<p> LSTM sequentially draws an image with fully differentiable attention network <a href="#/reference-slide-1">[14]</a>, <a href="#/reference-slide-1">[15]</a>  </p>	<iframe width="560" height="315" src="http://karpathy.github.io/assets/rnn/house_generate.gif" frameborder="0" allowfullscreen></iframe>	
 						<img src="pics/method_DRAW.png" />	
 					</section>
 
 				</section>
 
 				
-				<section>
+				<section >
 					<section>
 						
 						<h3>Training LSTM's</h3>
-						<p> Exploding gradient rather than vanishing gradient <a href="#/reference-slide-1">[30]</a> </p>
+						<p> Exploding gradient rather than vanishing gradient <a href="#/reference-slide-1">[16]</a> </p>
 						<ul>
 							<li>Impose a hard constraint on the norm of the gradient</li>	
 							<li>Ensure that minibatches are more or less the same size for training speedup</li>	
@@ -172,72 +173,81 @@
 					</section>
 					<section>
 						<h3>Recurrent batch normalization</h3>
-						<p>Leads to faster convergence and improved generalization <a href="#/reference-slide-1">[31]</a></p>	
+						<p>Leads to faster convergence and improved generalization <a href="#/reference-slide-1">[17]</a></p>	
 						<img src="pics/batch_norm_RNN.png" />					
 					</section>
 					<section>
 						<h3>Weight normalization</h3>
-						<p>Similar to batch normalization but simpler and less computational overhead <a href="#/reference-slide-1">[32]</a></p>	
+						<p>Similar to batch normalization but simpler and less computational overhead <a href="#/reference-slide-1">[18]</a></p>	
 						<img src="pics/weight_norm_RNN.png" />					
 					</section>
 				</section>	
 
-				<section>
+				<section data-transition="slide" data-background="#bdbbf7" >
 					<section>
-						<h3>Generative Adverserial Networks</h3>
-						<p> Train two models in a minimax game <a href="#/reference-slide-1">[50]</a>: </p>	
+						<h3>Generative Adversarial Networks</h3>
+						<p> Train two models in a minimax game <a href="#/reference-slide-1">[19]</a>: </p>	
 						<br>
 						<p>A generative model G that captures the data distribution</p>
 						<p>A discriminative model D that estimates the probability that a sample came from the training data rather than G</p>
 						<img src="pics/formula_GAN.png" />	
 					</section>
 					<section>						
-						<p>Deep convolutional: DCGAN <a href="#/reference-slide-1">[52]</a> </p>
+						<p>Deep convolutional: DCGAN <a href="#/reference-slide-1">[20]</a> </p>
 						<p>Achieve good results for image generation</p>
-						<img src="pics/architecture_DCGAN.png" >	
+						<img src="pics/architecture_DCGAN.png" />	
 					</section>	
 					<section>						
-						<p>The learned represenation space has smooth transitions   <a href="#/reference-slide-1">[52]</a> </p>
-						<img src="pics/transitions_DCGAN.png" >	
+						<p>The learned represenation space has smooth transitions   <a href="#/reference-slide-1">[20]</a> </p>
+						<img src="pics/transitions_DCGAN.png" />	
 					</section>	
 					<section>						
-						<p>Cascade of convolutional models: LAPGAN <a href="#/reference-slide-1">[51]</a> </p>
+						<p>Cascade of convolutional models: LAPGAN <a href="#/reference-slide-1">[21]</a> </p>
 						<p>Idea: build complex model conditional on simpler model</p>
-						<p>Similar to GRAN: Recurrent architecture: train simpler model first <a href="#/reference-slide-1">[51b]</a></p>
+						<p>Similar to GRAN: Recurrent architecture: train simpler model first <a href="#/reference-slide-1">[22]</a></p>
 						<p>Also achieves good results for image generation</p>
-						<img src="pics/method_LapGAN.png" >	
+						<img src="pics/method_LapGAN.png" />	
 					</section>	
 
 					<section>
-						<p>Not easy to train adverserial models with recurrent networks as the discriminator tends to determine whether it's a fake after just a few timesteps</p>
-						<p>Recently, a C-RNN-GAN has been trained, modeling the whole joint probability of a sequence, for real-valued data (midi) <a href="#/reference-slide-1">[53]</a></p>						
-						<img src="pics/architecture_C-RNN-GAN.png" >	
+						<p>Not easy to train adversarial models with recurrent networks as the discriminator tends to determine whether it's a fake after just a few timesteps</p>
+						<p>Recently, a C-RNN-GAN has been trained, modeling the whole joint probability of a sequence, for real-valued data (midi) <a href="#/reference-slide-1">[23]</a></p>						
+						<img src="pics/architecture_C-RNN-GAN.png" />	
 					</section>	
 
 					<section>
 						<p>So far, GAN's have only been applied to real-valued data, as the gradient of the loss from D is used to adapt the output of G in the right direction</p>
-						<p> SeqGAN was developed for sequences of symbols; generation is considered a sequential decision making process with RL <a href="#/reference-slide-1">[54]</a></p>		
+						<p> SeqGAN was developed for sequences of symbols; generation is considered a sequential decision making process with RL <a href="#/reference-slide-1">[24]</a></p>		
 						<p> Discriminator result is used as the reward for the policy update</p>		
-						<img src="pics/SeqGAN.png" >	
+						<img src="pics/SeqGAN.png" />	
 					</section>	
 					<section>
 						<p>SeqGAN: LSTM for G, CNN for D, but other architectures are possible</p>
 						<p>Pretraining with ML, then alternative training of G and D</p>			
-						<img src="pics/SeqGAN2.png" >	
+						<img src="pics/SeqGAN2.png" />	
 					</section>	
 
 					<section>
-						<p>Adverserial Professor Teaching: iteratively run generator freely and with input sequence <a href="#/reference-slide-1">[55]</a></p>
+						<p>Adversarial Professor Teaching: iteratively run generator freely and with input sequence <a href="#/reference-slide-1">[25]</a></p>
 						<p>Avoid gradient problem of discrete output by training discriminator on hidden states </p>	
 						<p>Tries to solve: for longer sequences RNN's tend to diverge to state spaces which were never observed during training</p>		
-						<img src="pics/architecture_professor_forcing.png" >	
+						<img src="pics/architecture_professor_forcing.png" height="200" />	
+					</section>	
+					
+					<section>
+						<p>Issues when training GAN's: missing modes and difficulty of conversion of training </p>
+						<ul>
+							<li>GAP: train several GAN's in parallel and exchange discriminators <a href="#/reference-slide-1">[26]</a></li>	
+							<li>MDGAN: mode regularization process <a href="#/reference-slide-1">[27]</a></li>	
+						</ul>	
+						<img src="pics/method_GAP.png" height="350" />	
 					</section>	
 
 				</section>
 
 
 				<section>
-					<h2>Frequently used data sources </h2>
+					<h3>Frequently used data sources </h3>
 					<ul>
 						<li><b>Piano-midi.de</b> is a classical piano MIDI archive that
 was split according to Poliner & Ellis (2007). </li>	
@@ -251,41 +261,46 @@ split of Allan & Williams (2005).</li>
 					</ul>					
 				</section>
 
-
+				<section>
 				<section>
 					<h3>Evaluating the results</h3>
 					<ul>
+						<li>Compare to baseline RNN generator trained to predict next token <a href="#/reference-slide-1">[23]</a></li>	
 						<li>Listening tests (Mechanical Turk)</li>	
-						<li>Battle of GAN's</li>	
+						<li>Battle of GAN's <a href="#/reference-slide-1">[22]</a> </li>	
 						<li>Plagiarism tests</li>	
-						<li>BLEU sequence score <a href="#/reference-slide-1">[54]</a></li>	
+						<li>BLEU sequence score <a href="#/reference-slide-1">[24]</a></li>	
 					</ul>					
+				</section>
+				<section>
+					<img src="pics/battle_GRAN.png" />	
+				</section>
 				</section>
 
 
 
-				<section>
+				<section data-transition="slide" data-background="#bdbbf7" >
 					<section>
 						<h3>Understanding neural networks</h3>
-						<p>Visualizing the "neuron" firings in RNN's <a href="#/reference-slide-1">[21]</a> </p>	
+						<p>Visualizing the "neuron" firings in RNN's <a href="#/reference-slide-1">[15]</a> </p>	
 						<img src="pics/neuron_firing.png" />	
 					</section>
 					<section>						
-						<p> Activation maximization: find the image tha maximally activates a certain neuron <a href="#/reference-slide-1">[22]</a> </p>
+						<p> Activation maximization: find the image tha maximally activates a certain neuron <a href="#/reference-slide-1">[28]</a> </p>
 						<img src="pics/activation_max.png" />	
 					</section>	
 					<section>						
-						<p> Code inversion: synthesize an image that produces similar activation vector as a real image at a particular layer  <a href="#/reference-slide-1">[23]</a> </p>
+						<p> Code inversion: synthesize an image that produces similar activation vector as a real image at a particular layer  <a href="#/reference-slide-1">[29]</a> </p>
 						<img src="pics/code_inversion.png" height="400" />	
 					</section>	
 					<section>
-						<p>Inproved activation maximization: Multifaceted feature visualization <a href="#/reference-slide-1">[24]</a></p>						
+						<p>Inproved activation maximization: Multifaceted feature visualization <a href="#/reference-slide-1">[30]</a></p>						
 						<img src="pics/multifaceted_feature.png" />	
 					</section>				
 				</section>
 
 	
-				<section>
+				<section data-transition="slide" data-background="#d9a48c" data-background-transition="concave">
 					<h2>PART 2</h2>	
 					<h3>Proposed approach </h3>								
 				</section>
@@ -305,7 +320,7 @@ split of Allan & Williams (2005).</li>
 					</section>
 					<section>						
 						<p>Use word embeddings to represent the music in a dense, continuous space </p>								
-						<p>Existing NN algorithms: CBOW, Skip-Gram model <a href="#/reference-slide-1">[60]</a> </p>	
+						<p>Existing NN algorithms: CBOW, Skip-Gram model <a href="#/reference-slide-1">[31]</a> </p>	
 						<img src="pics/architecture_embeddings.png" />					
 					</section>
 					<section>
@@ -320,23 +335,24 @@ split of Allan & Williams (2005).</li>
 					</section>
 					<section>
 						<p>SeqGAN model with word embedding representation; gradient is computed over continuous space gradient rather than policy  gradient; faster convergence expected	</p>
-						<p>Eg. LSTM for G, CNN for D, but other architectures are possible</p>
-						<p>If necessary: Pretraining with ML, then alternative training of G and D</p>	
-
-						<img src="pics/SeqGAN2.png" />	
+						<p>Eg. LSTM for G, CNN for D, but other architectures are possible;
+						if necessary: Pretraining with ML, then alternative training of G and D</p>
+						
+						<p><img src="pics/SeqGAN2.png" height="230" />	</p>	
+						
 					</section>	
 					<section>
 						<p>R-SeqGAN: inspired by recurrent structure of LAPGAN and GRAN - train difficult model conditional on simpler model</p>	
-						<p>First <img style="vertical-align:middle" src="pics/RKERN01.png" height="400" /> -> then <img style="vertical-align:middle" src="pics/RKERN02.png" height="400" /> -> then <img style="vertical-align:middle" src="pics/RKERN03.png" height="400" />	</p>
+						<p> <img class="fragment" style="vertical-align:middle" src="pics/RKERN01.png" height="400" /> -> <img class="fragment" style="vertical-align:middle" src="pics/RKERN02.png" height="400" /> -> <img class="fragment" style="vertical-align:middle" src="pics/RKERN03.png" height="400" />	</p>
 					</section>
 
 					<section>
-						<p>Alternative proposal: Recurrent Adverserial Professor Teaching: iteratively run generator freely and with input sequence <a href="#/reference-slide-1">[55]</a></p>
-						<p>Adverserial Professor Teaching with word embeddings: no need to train over hidden states; faster and better convergence expected </p>		
+						<p>Alternatively: Recurrent Adversarial Professor Teaching: iteratively run generator freely and with input sequence <a href="#/reference-slide-1">[25]</a></p>
+						<p>Adversarial Professor Teaching with word embeddings: no need to train over hidden states; faster and better convergence expected </p>		
 						<img src="pics/architecture_professor_forcing.png" />	
 					</section>	
 					<section>						
-						<p>Subsequent analysis of learned features by neuron visualization & state space exploration (?)  <a href="#/reference-slide-1">[21]</a> </p>	
+						<p>Subsequent analysis of learned features by neuron visualization & state space exploration (?)  <a href="#/reference-slide-1">[15]</a> </p>	
 						<img src="pics/neuron_firing.png" />	
 				
 					</section>
@@ -347,47 +363,43 @@ split of Allan & Williams (2005).</li>
 				</section>	
 
 
-				<section id="reference-slide-1">
+				<section id="reference-slide-1" data-transition="slide" data-background="#d9a48c" data-background-transition="fade-out">
 					<h3>References</h3>
 					<ul class="smallFont">
 						<li> [1] <a href="http://artsites.ucsc.edu/faculty/cope/experiments.htm"> Experiments in Musical Intelligence </a> </li>
-						<li> [3] <a href="https://highnoongmt.wordpress.com/2015/05/22/lisls-stis-recurrent-neural-networks-for-folk-music-generation/"> https://highnoongmt.wordpress.com/2015/05/22/lisls-stis-recurrent-neural-networks-for-folk-music-generation/ </a> </li>
-						<li>[4] <a href="http://people.idsia.ch/~juergen/blues/IDSIA-07-02.pdf"> A First Look at Music Composition
-						using LSTM Recurrent Neural Networks, Douglas Eck, Jurgen Schmidhuber </a> </li>
-						<li>[5] <a href="http://www.hexahedria.com/2015/08/03/composing-music-with-recurrent-neural-networks/"> Composing Music With Recurrent Neural Networks, Daniel Johnson </a> </li>
-						<li>[6] <a href="https://arxiv.org/pdf/1412.3555.pdf"> Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling, Junyoung Chung, Caglar Gulcehre, KyungHyun Cho, Yoshua Bengio </a> </li>
-						<li>[7] <a href="http://deeplearning.net/tutorial/rnnrbm.html#rnnrbm"> Modeling and generating sequences of polyphonic music with the RNN-RBM, Sid Sigtia </a> </li>
-						<li>[8] <a href="http://www-etud.iro.umontreal.ca/~boulanni/ICML2012.pdf"> Modeling Temporal Dependencies in High-Dimensional Sequences: Application to Polyphonic Music Generation and Transcription, Nicolas Boulanger-Lewandowski, Yoshua Bengio, Pascal Vincent </a> </li>
-						<li>[9] <a href="https://magenta.tensorflow.org/2016/11/09/tuning-recurrent-networks-with-reinforcement-learning/"> Tuning Recurrent Neural Networks with Reinforcement Learning, Natasha Jaques (Magenta) </a> </li>
-						<li>[10] <a href="https://arxiv.org/pdf/1612.01010.pdf"> DeepBach: a Steerable Model for Bach chorales generation, Gaetan Hadjeres, Francois Pachet </a> </li>
-						<li>[15] <a href="https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html"> Inceptionism: Going Deeper into Neural Networks, Alexander Mordvintsev, Christopher Olah, Mike Tyka </a> </li>
-						<li>[19] <a href="https://arxiv.org/pdf/1502.04623.pdf"> DRAW: A Recurrent Neural Network For Image Generation, Karol Gregor, Ivo Danihelka, Alex Graves, Danilo Jimenez Rezende, Daan Wierstra </a> </li>
-						<li>[20] <a href="https://arxiv.org/pdf/1508.06576v1.pdf"> A Neural Algorithm of Artistic Style, Leon A. Gatys, Alexander S. Ecker, Matthias Bethge </a> </li>
-						<li>[21] <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/"> The unreasonable effectiveness of recurrent neural networks, Andrej Karpathy </a> </li>
-						<li>[22] <a href="http://igva2012.wikispaces.asu.edu/file/view/Erhan+2009+Visualizing+higher+layer+features+of+a+deep+network.pdf"> Visualizing Higher-Layer Features of a Deep Network, Dumitru Erhan, Yoshua Bengio, Aaron Courville, and Pascal Vincent  </a> </li>
-						<li>[23] <a href="https://arxiv.org/pdf/1512.02017.pdf"> Visualizing deep convolutional neural networks using natural pre-images, Aravindh Mahendran, Andrea Vedaldi </a> </li>
-						<li>[24] <a href="https://arxiv.org/pdf/1602.03616.pdf"> Multifaceted Feature Visualization: Uncovering the Different Types of Features Learned By Each Neuron in Deep Neural Networks, Anh Nguyen, Jason Yosinski, Jeff Clune  </a> </li>
-						<li>[30] <a href="https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf"> Sequence to sequence learning with neural networks, Ilya Sutskever, Oriol Vinyals, Quoc V. Le </a> </li>
-						<li>[31] <a href="http://www.gitxiv.com/posts/MwSDm6A4wPG7TcuPZ/recurrent-batch-normalization"> Recurrent Batch Normalization, Tim Cooijmans, Nicolas Ballas, Cesar Laurent, Caglar Guelcehre </a> </li>
-						<li>[32] <a href="https://arxiv.org/pdf/1602.07868.pdf"> Weight Normalization: A Simple Reparameterization to Accelerate Training of Deep Neural Networks, Tim Salimans, Diederik P. Kingma  </a> </li>
-						<li>[40] <a href="https://arxiv.org/pdf/1506.02216.pdf"> A Recurrent Latent Variable Model for Sequential Data, Junyoung Chung, Kyle Kastner, Laurent Dinh, Kratarth Goel, Aaron Courville, Yoshua Bengio </a> </li>
-						<li>[41] <a href="https://arxiv.org/pdf/1609.03499.pdf"> Wavenet: a generative model for raw audio, Aaron van den Oord, Sander Dieleman, Heiga Zen, Karen Simonyan, Oriol Vinyals, Alex Graves, Nal Kalchbrenner, Andrew Senior, Koray Kavukcuoglu   </a> </li>
-						<li>[50] <a href="https://arxiv.org/pdf/1406.2661.pdf"> Generative Adversarial Networks,  Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, Yoshua Bengio</a> </li>
-						<li>[51] <a href="https://arxiv.org/pdf/1506.05751.pdf"> Deep Generative Image Models using a Laplacian Pyramid of Adversarial Networks, Emily Denton, Soumith Chintala, Arthur Szlam, Rob Fergus </a> </li>
-						<li>[51b] <a href="https://arxiv.org/pdf/1602.05110v5.pdf"> Generating images with recurrent adversarial networks, Daniel Jiwoong Im, Chris Dongjoo Kim, Hui Jiang, Roland Memisevic </a> </li>
-						<li>[52] <a href="https://arxiv.org/pdf/1511.06434.pdf"> Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks, Alec Radford, Luke Metz, Soumith Chintala </a> </li>
-						<li>[53] <a href="https://arxiv.org/pdf/1611.09904.pdf"> C-RNN-GAN: Continuous recurrent neural networks with adversarial training, Olof Mogren </a> </li>
-						<li>[54] <a href="https://arxiv.org/pdf/1609.05473.pdf"> SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient, Lantao Yu, Weinan Zhang, Jun Wang, Yong Yu </a> </li>
-						<li>[55] <a href="https://papers.nips.cc/paper/6099-professor-forcing-a-new-algorithm-for-training-recurrent-networks.pdf"> Professor Forcing: A New Algorithm for Training Recurrent Networks, Anirudh Goyal, Alex Lamb, Ying Zhang, Saizheng Zhang, Aaron Courville, Yoshua Bengio </a> </li>
-						<li>[60] <a href="https://arxiv.org/pdf/1301.3781.pdf"> Efficient Estimation of Word Representations in Vector Space, Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean </a> </li>
+						<li> [2] <a href="https://highnoongmt.wordpress.com/2015/05/22/lisls-stis-recurrent-neural-networks-for-folk-music-generation/"> https://highnoongmt.wordpress.com/2015/05/22/lisls-stis-recurrent-neural-networks-for-folk-music-generation/ </a> </li>
+						<li>[3] <a href="http://people.idsia.ch/~juergen/blues/IDSIA-07-02.pdf"> A First Look at Music Composition using LSTM Recurrent Neural Networks, Douglas Eck, Jurgen Schmidhuber </a> </li>
+						<li>[4] <a href="http://www.hexahedria.com/2015/08/03/composing-music-with-recurrent-neural-networks/"> Composing Music With Recurrent Neural Networks, Daniel Johnson </a> </li>
+						<li>[5] <a href="https://arxiv.org/pdf/1412.3555.pdf"> Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling, Junyoung Chung, Caglar Gulcehre, KyungHyun Cho, Yoshua Bengio </a> </li>
+						<li>[6] <a href="http://deeplearning.net/tutorial/rnnrbm.html#rnnrbm"> Modeling and generating sequences of polyphonic music with the RNN-RBM, Sid Sigtia </a> </li>
+						<li>[7] <a href="http://www-etud.iro.umontreal.ca/~boulanni/ICML2012.pdf"> Modeling Temporal Dependencies in High-Dimensional Sequences: Application to Polyphonic Music Generation and Transcription, Nicolas Boulanger-Lewandowski, Yoshua Bengio, Pascal Vincent </a> </li>
+						<li>[8] <a href="https://magenta.tensorflow.org/2016/11/09/tuning-recurrent-networks-with-reinforcement-learning/"> Tuning Recurrent Neural Networks with Reinforcement Learning, Natasha Jaques (Magenta) </a> </li>
+						<li>[9] <a href="https://arxiv.org/pdf/1612.01010.pdf"> DeepBach: a Steerable Model for Bach chorales generation, Gaetan Hadjeres, Francois Pachet </a> </li>
+						<li>[10] <a href="https://arxiv.org/pdf/1506.02216.pdf"> A Recurrent Latent Variable Model for Sequential Data, Junyoung Chung, Kyle Kastner, Laurent Dinh, Kratarth Goel, Aaron Courville, Yoshua Bengio </a> </li>
+						<li>[11] <a href="https://arxiv.org/pdf/1609.03499.pdf"> Wavenet: a generative model for raw audio, Aaron van den Oord, Sander Dieleman, Heiga Zen, Karen Simonyan, Oriol Vinyals, Alex Graves, Nal Kalchbrenner, Andrew Senior, Koray Kavukcuoglu   </a> </li>
+						<li>[12] <a href="https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html"> Inceptionism: Going Deeper into Neural Networks, Alexander Mordvintsev, Christopher Olah, Mike Tyka </a> </li>
+						<li>[13] <a href="https://arxiv.org/pdf/1508.06576v1.pdf"> A Neural Algorithm of Artistic Style, Leon A. Gatys, Alexander S. Ecker, Matthias Bethge </a> </li>
+						<li>[14] <a href="https://arxiv.org/pdf/1502.04623.pdf"> DRAW: A Recurrent Neural Network For Image Generation, Karol Gregor, Ivo Danihelka, Alex Graves, Danilo Jimenez Rezende, Daan Wierstra </a> </li>
+						<li>[15] <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/"> The unreasonable effectiveness of recurrent neural networks, Andrej Karpathy </a> </li>
+						<li>[16] <a href="https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf"> Sequence to sequence learning with neural networks, Ilya Sutskever, Oriol Vinyals, Quoc V. Le </a> </li>
+						<li>[17] <a href="http://www.gitxiv.com/posts/MwSDm6A4wPG7TcuPZ/recurrent-batch-normalization"> Recurrent Batch Normalization, Tim Cooijmans, Nicolas Ballas, Cesar Laurent, Caglar Guelcehre </a> </li>
+						<li>[18] <a href="https://arxiv.org/pdf/1602.07868.pdf"> Weight Normalization: A Simple Reparameterization to Accelerate Training of Deep Neural Networks, Tim Salimans, Diederik P. Kingma  </a> </li>
+						<li>[19] <a href="https://arxiv.org/pdf/1406.2661.pdf"> Generative Adversarial Networks,  Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, Yoshua Bengio</a> </li>
+						<li>[20] <a href="https://arxiv.org/pdf/1511.06434.pdf"> Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks, Alec Radford, Luke Metz, Soumith Chintala </a> </li>
+						<li>[21] <a href="https://arxiv.org/pdf/1506.05751.pdf"> Deep Generative Image Models using a Laplacian Pyramid of Adversarial Networks, Emily Denton, Soumith Chintala, Arthur Szlam, Rob Fergus </a> </li>
+						<li>[22] <a href="https://arxiv.org/pdf/1602.05110v5.pdf"> Generating images with recurrent adversarial networks, Daniel Jiwoong Im, Chris Dongjoo Kim, Hui Jiang, Roland Memisevic </a> </li>
+						<li>[23] <a href="https://arxiv.org/pdf/1611.09904.pdf"> C-RNN-GAN: Continuous recurrent neural networks with adversarial training, Olof Mogren </a> </li>
+						<li>[24] <a href="https://arxiv.org/pdf/1609.05473.pdf"> SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient, Lantao Yu, Weinan Zhang, Jun Wang, Yong Yu </a> </li>
+						<li>[25] <a href="https://papers.nips.cc/paper/6099-professor-forcing-a-new-algorithm-for-training-recurrent-networks.pdf"> Professor Forcing: A New Algorithm for Training Recurrent Networks, Anirudh Goyal, Alex Lamb, Ying Zhang, Saizheng Zhang, Aaron Courville, Yoshua Bengio </a> </li>
+						<li>[26] <a href="https://openreview.net/pdf?id=Sk8J83oee"> Generative Adversarial Parallelization, Daniel Jiwoong Im, He Ma, Chris Dongjoo Kim, Graham W. Taylor </a> </li>
+						<li>[27] <a href="https://arxiv.org/pdf/1612.02136.pdf"> Mode Generalized Generative Adversarial Networks, Tong Che, Yanran Li, Athul Paul Jacob, Yoshua Bengio, Wenjie Li </a> </li>
+						<li>[28] <a href="http://igva2012.wikispaces.asu.edu/file/view/Erhan+2009+Visualizing+higher+layer+features+of+a+deep+network.pdf"> Visualizing Higher-Layer Features of a Deep Network, Dumitru Erhan, Yoshua Bengio, Aaron Courville, and Pascal Vincent  </a> </li>
+						<li>[29] <a href="https://arxiv.org/pdf/1512.02017.pdf"> Visualizing deep convolutional neural networks using natural pre-images, Aravindh Mahendran, Andrea Vedaldi </a> </li>
+						<li>[30] <a href="https://arxiv.org/pdf/1602.03616.pdf"> Multifaceted Feature Visualization: Uncovering the Different Types of Features Learned By Each Neuron in Deep Neural Networks, Anh Nguyen, Jason Yosinski, Jeff Clune  </a> </li>
+						<li>[31] <a href="https://arxiv.org/pdf/1301.3781.pdf"> Efficient Estimation of Word Representations in Vector Space, Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean </a> </li>
 					</ul>		
 				</section>
 
-				<!-- TODO: 
-				* evaluating the results 
-				* look in more detail at SeqGAN and Professor teaching
-				* parallel GAN training?
-			-->
 
 			</div>
 
@@ -401,12 +413,28 @@ split of Allan & Williams (2005).</li>
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
+				/*
+				// Parallax background image
+    			parallaxBackgroundImage: "http://www.publicdomainpictures.net/pictures/40000/velka/blue-check-pattern-background.jpg", // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
+
+			    // Parallax background size
+    			parallaxBackgroundSize: "1920px 1920px", // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
+
+		    	// Number of pixels to move the parallax background per slide
+    			// - Calculated automatically unless specified
+   		 		// - Set to 0 to disable movement along an axis
+    			parallaxBackgroundHorizontal: 50,
+    			parallaxBackgroundVertical: 20,
+    			*/
 				controls: true,
 				progress: true,
 				history: true,
 				center: true,
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				
+				
+
 
 				// Optional reveal.js plugins
 				dependencies: [
