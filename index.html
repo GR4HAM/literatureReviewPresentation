@@ -605,9 +605,11 @@ split of Allan & Williams (2005).</li>
 											
 					</section>
 					<section>	
-						<p>Downside of kern representation: note intensity levels that are present in MIDI notation are lost  </p>	
+						<p>Downside of kern representation:</p>
+						<ul><li>Note intensity levels that are present in MIDI notation are lost </li>	
+						<li>Limited diversity in datasets: mostly polyphonic classical: <a href="http://kern.ccarh.org/">http://kern.ccarh.org/</a>  </li></ul> 
 						<p>Possible follow up: attempt same approach with MIDI representation </p>					
-						<p>Specific datasets for scientific research, mostly polyphonic classical: <a href="http://kern.ccarh.org/">http://kern.ccarh.org/</a>  </p>							
+													
 					</section>
 					<section>	
 						<p>At start: 3 734 027 tokens, 63 477 unique words </p>
@@ -615,6 +617,21 @@ split of Allan & Williams (2005).</li>
 						<p>Remainder: 32 743 unique words </p>				
 						<p>Remove infrequent words (eg less than 20 occurrences in entire corpus)</a>  </p>		
 						<p>Remainder: 4906 unique words </p>						
+					</section>
+					<section>	
+						<p>Pre-processing illustration </p>
+						<p>Remove notation that doesn't contain additional musical information: stems and beams</p>	
+						<img src="pics/example_processing_01.png" height="400"> <img class="fragment" src="pics/example_processing_02_hl.png" height="400"/>						
+					</section>
+					<section>	
+						<p>Pre-processing illustration </p>
+						<p>When columns split, retain first column only</p>	
+						<img src="pics/example_processing_02.png" height="400"> <img class="fragment" src="pics/example_processing_03_hl.png" height="400"/>						
+					</section>
+					<section>	
+						<p>Pre-processing illustration </p>
+						<p>Replace infrequent words - try to find most similar word</p>	
+						<img src="pics/example_processing_03.png" height="400"> <img class="fragment" src="pics/example_processing_04_hl.png" height="400"/>						
 					</section>
 					<section>						
 						<p>Use word embeddings to represent the music in a dense, continuous space </p>								
@@ -628,27 +645,6 @@ split of Allan & Williams (2005).</li>
 										
 					</section>
 					<section>
-						<p>Music: similar results! </p>					
-						<img src="pics/PCA_INC_simplified_nn24_thresh20.png" height="450"/>	
-						<p>Notice: b and e below while f, g, c and d above </p>					
-										
-					</section>
-
-					<section>
-						<p>Frequency of key signatures in the corpus </p>				
-						<img src="pics/key_signature_frequency_simplified.png" height="380"/>	
-
-						<p>Key signatures affect word meaning! </p>	
-						<p>Cfr. homonym in NLP </p>	
-				
-										
-					</section>
-					<section>
-						<p>Sharp notes: compare 4f and 4e# </p>
-						<p>Less prevalent & occur in different contexts </p>					
-						<img src="pics/PCA_simplified_nn24_thresh20_sharpnotes.png" height="450"/>															
-					</section>
-					<section>
 						<p>How do we evaluate the performance of the word embedding model? </p>		
 						<p>What analogies exist between musical words? </p>		
 						<p>-> consult the experts</p>		
@@ -657,9 +653,56 @@ split of Allan & Williams (2005).</li>
 
 														
 					</section>
+					<section>
+						<p>Music: similar results! </p>					
+						<img src="pics/PCA_INC_simplified_nn24_thresh20.png" height="450"/>	
+						<p>Notice: why are the notes not on a straight line?</p>					
+										
+					</section>
+					<section>
+						<p>Durations: more or less </p>
+										
+						<img src="pics/PCA_simplified_nn24_thresh20_durations.png" height="450"/>															
+					</section>
 
 					<section>
-						<p>Amateur attempt </p>		
+						<p>Frequency of key signatures in the corpus </p>				
+						<img src="pics/key_signature_frequency_simplified.png" height="380"/>	
+
+						<p>Key signatures affect word meaning! </p>	
+						<p>Cfr. homonym in NLP </p>												
+					</section>
+
+
+					<section>
+						<p>Sharp notes: compare 4f and 4e# </p>
+						<p>Less prevalent & occur in different contexts </p>					
+						<img src="pics/PCA_simplified_nn24_thresh20_sharpnotes.png" height="450"/>															
+					</section>
+
+					<section>
+						<p>Major chords: which notes belong together? </p>
+										
+						<img src="pics/PCA_simplified_nn24_thresh20_harmony_02.png" height="450"/>
+						<img class="fragment" src="pics/PCA_simplified_nn24_thresh20_harmony_02_hl.png" height="450"/>																
+					</section>
+					<section>
+						<p>Major chords: which notes belong together? </p>
+										
+						<img src="pics/PCA_simplified_nn24_thresh20_harmony.png" height="450"/>
+						<img class="fragment" src="pics/PCA_simplified_nn24_thresh20_harmony_hl.png" height="450"/>																
+					</section>
+					<section>
+						<p>Minor chords: which notes belong together? </p>
+										
+						<img src="pics/PCA_simplified_nn24_thresh20_minor.png" height="450"/>
+						<img class="fragment" src="pics/PCA_simplified_nn24_thresh20_minor_hl.png" height="450"/>																
+					</section>
+
+					
+					
+
+					<section>							
 						<p>List of expected analogies (vector size 24)</p>		
 						<img  src="pics/questions_examples_simplified.png" />	
 						<img class ="fragment" src="pics/questions_answers_simplified_nn24_large.png" />
@@ -676,12 +719,12 @@ split of Allan & Williams (2005).</li>
 					<section>
 						<p>Optimizing the neural network </p>		
 						<p>Accuracy for vector size and undersampling parameter </p>		
-						<img  src="pics/parent_simplified_accuracy_size_vs_sample_minCount1_numIter5_sg1_window5_ave10_parent_thresh20.png" />					
+						<img  src="pics/parent_simplified_accuracy_size_vs_sample_minCount1_numIter5_sg1_window5_ave10_parent_thresh20.png" height="400"/>					
 					</section>
 
 					<section>	
 						<p>Next step: Music generation using "music vectors"					
-						<p>Proposal: R-SeqGAN with word embeddings; gradient is computed over continuous space gradient rather than policy  gradient; no need for MC; faster convergence expected</p>	
+						<p>Proposal: R-SeqGAN with word embeddings; gradient is computed over continuous space gradient rather than policy gradient; no need for MC; faster convergence expected</p>	
 						<p>Adversarial Professor Teaching with word embeddings: no need to train over hidden states; faster and better convergence expected </p>	
 				
 					</section>
