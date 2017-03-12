@@ -721,16 +721,29 @@ split of Allan & Williams (2005).</li>
 						<p>Accuracy for vector size and undersampling parameter </p>		
 						<img  src="pics/parent_simplified_accuracy_size_vs_sample_minCount1_numIter5_sg1_window5_ave10_parent_thresh20.png" height="400"/>					
 					</section>
+					<section>
+						<p>First attempt at generation: </p>		
+						<p>Predicting most likely next word from sequence (ML) with LTSM with mini-batching </p>
+						<p> 1 epoch, size of embedding layer: 24 </p>								
+						<img  src="pics/example_generation_ML_epoch1_nnsize24.png" />					
+					</section>
+					<section>
+						<p>Next questions: </p>		
+						<p>How is the embedding layer in a keras model related to the word embedding layer? </p>
+						<p> Does it learn similar relationships? </p>	
+						<p> What if we replace embedding layer by our learnt word embeddings? </p>		
+						<img  src="pics/keras_embedding_layer.png" />					
+					</section>
 
 					<section>	
-						<p>Next step: Music generation using "music vectors"					
+						<p>Then: Music generation using "music vectors"					
 						<p>Proposal: R-SeqGAN with word embeddings; gradient is computed over continuous space gradient rather than policy gradient; no need for MC; faster convergence expected</p>	
 						<p>Adversarial Professor Teaching with word embeddings: no need to train over hidden states; faster and better convergence expected </p>	
 				
 					</section>
 	
 					<section>
-						<p>R-SeqGAN: inspired by recurrent structure of LAPGAN and GRAN - train difficult model conditional on simpler model</p>	
+						<p>Learn in steps: inspired by recurrent structure of LAPGAN and GRAN - train difficult model conditional on simpler model</p>	
 						<p> <img class="fragment" style="vertical-align:middle" src="pics/RKERN01.png" height="400" /> -> <img class="fragment" style="vertical-align:middle" src="pics/RKERN02.png" height="400" /> -> <img class="fragment" style="vertical-align:middle" src="pics/RKERN03.png" height="400" />	</p>
 					</section>
 
