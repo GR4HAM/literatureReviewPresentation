@@ -605,18 +605,20 @@ split of Allan & Williams (2005).</li>
 											
 					</section>
 					<section>	
-						<p>Downside of kern representation:</p>
+						<p>Downsides of kern representation:</p>
 						<ul><li>Note intensity levels that are present in MIDI notation are lost </li>	
-						<li>Limited diversity in datasets: mostly polyphonic classical: <a href="http://kern.ccarh.org/">http://kern.ccarh.org/</a>  </li></ul> 
-						<p>Possible follow up: attempt same approach with MIDI representation </p>					
+						<li>Limited diversity in datasets: mostly polyphonic classical: <a href="http://kern.ccarh.org/">http://kern.ccarh.org/</a>  </li></ul> <br><br>
+						<p>Upsides of kern representation:</p>
+						<ul><li>Pre-existing scientific tools</li>	
+						<li>Simple, easy to interpret </li>	</ul> 				
 													
 					</section>
 					<section>	
-						<p>At start: 3 734 027 tokens, 63 477 unique words </p>
+						<p>At start: ~ 3.7 mio tokens, ~ 63 000 unique words </p>
 						<p>Data pre-processing:  remove notation that doesn't contain additional information: stems and beams</p>	
-						<p>Remainder: 32 743 unique words </p>				
+						<p>Remainder: ~ 33 000 unique words </p>				
 						<p>Remove infrequent words (eg less than 20 occurrences in entire corpus)</a>  </p>		
-						<p>Remainder: 4906 unique words </p>						
+						<p>Remainder: ~ 5 000 unique words </p>						
 					</section>
 					<section>	
 						<p>Pre-processing illustration </p>
@@ -727,6 +729,13 @@ split of Allan & Williams (2005).</li>
 						<p> 1 epoch, size of embedding layer: 24 </p>								
 						<img  src="pics/example_generation_ML_epoch1_nnsize24.png" />					
 					</section>
+					
+					<section>
+						<p>Second attempt: limit corpus to Bach chorales </p>
+						<p> 5 epochs, embedding: 100, infrequent words not removed</p>								
+						<img  src="pics/example_generation_bach_thresh0_music_score.png" height="250"/>	
+						<iframe width="50%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/312123335&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>				
+					</section>
 					<section>
 						<p>Next questions: </p>		
 						<p>How is the embedding layer in a keras model related to the word embedding layer? </p>
@@ -736,8 +745,8 @@ split of Allan & Williams (2005).</li>
 					</section>
 
 					<section>	
-						<p>Then: Music generation using "music vectors"					
-						<p>Proposal: R-SeqGAN with word embeddings; gradient is computed over continuous space gradient rather than policy gradient; no need for MC; faster convergence expected</p>	
+						<p>Then: Music generation using "music vectors"	and GANs				
+						<p>R-SeqGAN with word embeddings; gradient is computed over continuous space gradient rather than policy gradient; no need for MC; faster convergence expected</p>	
 						<p>Adversarial Professor Teaching with word embeddings: no need to train over hidden states; faster and better convergence expected </p>	
 				
 					</section>
